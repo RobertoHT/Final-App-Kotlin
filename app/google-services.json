@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "633907669087",
+    "firebase_url": "https://kotlin-udemy.firebaseio.com",
+    "project_id": "kotlin-udemy",
+    "storage_bucket": "kotlin-udemy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633907669087:android:0facdc63803ab7a9",
+        "android_client_info": {
+          "package_name": "com.roberto.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633907669087-svt9v523gfh3dr66jpsid33a5rdkg9rv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCToKVnSdPbvSPJQpTVmr6ReHsJB6AOPwo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

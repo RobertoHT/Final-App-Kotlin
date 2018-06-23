@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "633907669087-np4jrps4o2spa21hfjhdeukmu1k9aalr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.roberto.app",
+            "certificate_hash": "817e0070fb990dd11cec0dbdb85ce21d409b3dc4"
+          }
+        },
+        {
           "client_id": "633907669087-svt9v523gfh3dr66jpsid33a5rdkg9rv.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633907669087-svt9v523gfh3dr66jpsid33a5rdkg9rv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

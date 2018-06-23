@@ -13,4 +13,8 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="NoPreview" parent="AppTheme">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
 </resources>

@@ -9,24 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
         <activity
-            android:name=".activities.LoginActivity"
-            android:theme="@style/NoPreview"
-            android:windowSoftInputMode="adjustPan">
+            android:name=".activities.MainEmptyActivity"
+            android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
         <activity
-            android:name=".activities.SignUpActivity">
-        </activity>
+            android:name=".activities.LoginActivity"
+            android:theme="@style/NoPreview"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activities.SignUpActivity" />
         <activity
             android:name=".activities.ForgotPasswordActivity"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
+            android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>

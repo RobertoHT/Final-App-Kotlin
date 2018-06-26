@@ -14,7 +14,9 @@ import com.google.firebase.firestore.*
 import com.roberto.app.R
 import com.roberto.app.adapter.ChatAdapter
 import com.roberto.app.models.Message
+import com.roberto.app.models.TotalMessagesEvent
 import com.roberto.app.toast
+import com.roberto.app.utils.RxBus
 import kotlinx.android.synthetic.main.fragment_chat.view.*
 import java.util.*
 import java.util.EventListener
@@ -79,7 +81,7 @@ class ChatFragment : Fragment() {
         val newMessage = HashMap<String, Any>()
         newMessage["authorId"] = message.authorId
         newMessage["message"] = message.message
-        newMessage["profileImageURL"] = message.profileImageUrl
+        newMessage["profileImageURL"] = message.profileImageURL
         newMessage["sentAt"] = message.sentAt
 
         chatDBref.add(newMessage)
@@ -108,14 +110,15 @@ class ChatFragment : Fragment() {
                         messageList.addAll(messages.asReversed())
                         adapter.notifyDataSetChanged()
                         _view.recyclerView.scrollToPosition(messageList.size)
+                        RxBus.publish(TotalMessagesEvent(messageList.size))
                     }
                 }
         })
     }
 
-    override fun onDestroy() {
+    override fun onDestroyView() {
         chatSubscription?.remove()
 
-        super.onDestroy()
+        super.onDestroyView()
     }
 }

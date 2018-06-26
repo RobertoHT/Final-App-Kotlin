@@ -1,14 +1,18 @@
 package com.roberto.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.Toolbar
+import android.view.Menu
 import android.view.MenuItem
+import com.google.firebase.auth.FirebaseAuth
 import com.roberto.app.adapter.PageAdapter
 import com.roberto.app.fragments.ChatFragment
 import com.roberto.app.fragments.InfoFragment
 import com.roberto.app.fragments.RatesFragment
 import com.roberto.mylibrary.ToolbarActivity
+import com.roberto.app.activities.LoginActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : ToolbarActivity() {
@@ -35,6 +39,7 @@ class MainActivity : ToolbarActivity() {
 
     private fun setUpViewPager(adapter: PageAdapter) {
         viewPager.adapter = adapter
+        viewPager.offscreenPageLimit = adapter.count
         viewPager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {}
 
@@ -67,5 +72,24 @@ class MainActivity : ToolbarActivity() {
                 else -> false
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.general_options_menu, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.menu_logout -> {
+                FirebaseAuth.getInstance().signOut()
+                goToActivity<LoginActivity> {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

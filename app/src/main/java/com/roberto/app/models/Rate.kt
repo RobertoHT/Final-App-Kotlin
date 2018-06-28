@@ -6,8 +6,9 @@ import java.util.*
  * Created by Roberto Hdez. on 25/06/18.
  */
 data class Rate(
-        val text: String,
-        val rate: Float,
-        val createdAt: Date,
-        val profileImageURL: String
+        val userId: String = "",
+        val text: String = "",
+        val rate: Float = 0f,
+        val createdAt: Date = Date(),
+        val profileImageURL: String = ""
 )
